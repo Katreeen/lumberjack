@@ -8,7 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="libs/fancybox/fancybox.css" />
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -41,10 +42,49 @@
           </div>
         </div>
         <div class="col-auto">
-          <div class="header__menu">
-            <a href="#" class="menu-toggler -fs-18 -rub-m">меню <span class="menu-icon"></span></a>
+          <div class="header__menu navbar  navbar-light">
+            <button class="btn navbar-toggler menu-toggler -fs-18 -rub-m" type="button" data-bs-toggle="collapse" data-bs-target="#hmenu" aria-controls="hmenu" aria-expanded="false">меню <span class="menu-icon"></span></button>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse header__dropdown" id="hmenu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link -rob-b -fs-20" href="#">Информация</a>
+          <ul class="sub-menu">
+            <li><a class="sub-item" href="#">Цены</a></li>
+            <li><a class="sub-item" href="#">Наши работы</a></li>
+            <li><a class="sub-item" href="#">Отзывы</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link -rob-b -fs-20" href="#">Услуги</a>
+          <ul class="sub-menu">
+            <li><a class="sub-item" href="#">Удаление деревьев и пней</a></li>
+            <li><a class="sub-item" href="#">Обрезка и кронирование деревьев</a></li>
+            <li><a class="sub-item" href="#">Расчистка участка</a></li>
+            <li><a class="sub-item" href="#">Распил деревьев на дрова</a></li>
+            <li><a class="sub-item" href="#">Дробление веток</a></li>
+            <li><a class="sub-item" href="#">Вывоз попилочных остатков</a></li>
+            <li><a class="sub-item" href="#">Высотные работы (Арбористика)</a></li>
+            <li><a class="sub-item" href="#">Покос травы</a></li>
+            <li><a class="sub-item" href="#">Лесопатолог</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link -rob-b -fs-20" href="#">Контакты</a>
+        </li>
+      </ul>
+      <div class="drop-social social d-sm-none">
+        <a href="#" class="-wa"></a>
+        <a href="#" class="-tg"></a>
+        <a href="#" class="-fb"></a>
+        <a href="#" class="-vk"></a>
+      </div>
+      <div class="drop-phone -fs-20 -rob-b d-sm-none">
+        <a href="84951234567">+7 (495) 123 45 67</a>
+        <a href="84951234567">+7 (495) 123 45 67</a>
       </div>
     </div>
   </header>
@@ -144,61 +184,81 @@
         <div class="row -iservice-row -center">
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service01.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">01</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise01.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service01.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Cпил деревьев</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service02.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">02</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise01.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service02.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Удаление пней</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service03.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">03</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise03.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service03.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Обрезка и кронирование деревьев</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service04.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">04</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise04.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service04.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Расчистка участка</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service05.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">05</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise05.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service05.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Распил деревьев на дрова</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service06.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">06</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise06.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service06.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Дробление веток</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service07.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">07</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise07.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service07.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Вывоз попилочных остатков</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service08.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">08</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise08.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service08.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Высотные работы (Арбористика)</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service09.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">09</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise09.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service09.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Покос травы</span>
             </a>
           </div>
           <div class="col-md-6">
             <a href="#" class="iservice__item">
-              <span class="iservice__img"><img src="i/service10.jpg" alt=""></span>
+              <span class="iservice__num -rub-m -fs-20">10</span>
+              <span class="iservice__img d-none d-lg-flex"><img src="i/servise10.png" alt=""></span>
+              <span class="iservice__img d-lg-none"><img src="i/service10.jpg" alt=""></span>
               <span class="iservice__title -fs-20 -rob-m">Лесопатолог</span>
             </a>
           </div>
@@ -339,7 +399,7 @@
           </div>
         </div>
         <div class="ireviews__btn">
-          <a href="#" class="btn btn-third">Оставить отзыв</a>
+          <a href="#" data-src="#popup-review" data-fancybox class="btn btn-third">Оставить отзыв</a>
         </div>
       </div>
     </div>
@@ -534,7 +594,6 @@
               <a href="#" class="-vk"></a>
             </div>
           </div>
-          
         </div>
       </div>
       <div class="footer-line"></div>
@@ -556,13 +615,47 @@
           <div class="footer-copy -fs-14">© 2021 “Lumberjack” Все права защищены</div>
         </div>
       </div>
-      
     </div>
-
 	</footer>
-
+  <div class="popup popup-review" id="popup-review">
+    <div class="popup__wrap">
+      <div class="popup__title -rub-m -fs-30 -center">Оставить отзыв</div>
+      <form action="" class="review__form">
+        <div class="row -review-row">
+          <div class="col-12 -review-col">
+            <label for="r-name" class="form-label">ФИО</label>
+            <input type="text" id="r-name" class="form-control" placeholder="">
+          </div>
+          <div class="col-12 -review-col">
+            <label for="r-city" class="form-label">Город</label>
+            <select class="form-select" id="r-city">
+              <option value="msk">Москва</option>
+              <option value="smr">Самара</option>
+              <option value="srt">Саратов</option>
+            </select>
+          </div>
+          <div class="col-12 -review-col">
+            <div class="form-label">Ваше фото</div>
+            <div class="file-row">
+              <label for="r-photo" class="form-label file"></label>
+              <span class="filename">Загрузить фото</span>
+            </div>
+            <input type="file" id="r-photo" class="form-control">
+          </div>
+          <div class="col-12 -review-col">
+            <label for="r-text" class="form-label">Ваш отзыв</label>
+            <textarea id="r-text" class="form-control" placeholder=""></textarea>
+          </div>
+        </div>
+        <div class="review__btn -center">
+          <button type="submit" class="btn btn-secondary">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
   <script src="libs/bootstrap/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="libs/swiper/swiper-bundle.min.js"></script>
+  <script src="libs/fancybox/fancybox.umd.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>

@@ -38,3 +38,13 @@ const inews = new Swiper('.inews__carousel', {
     prevEl: '.inews .swiper-button-prev',
   },
 });
+
+// const fancybox = new Fancybox();
+//document.getElementById("selected_filename").innerHTML = document.getElementById("r-photo").value;
+
+const addPhoto = document.getElementById('r-photo');
+
+addPhoto.addEventListener('change', (event) => {
+  const result = document.querySelector('.filename');
+  result.textContent = `${event.target.value}`;
+});
