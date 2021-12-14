@@ -39,12 +39,126 @@ const inews = new Swiper('.inews__carousel', {
   },
 });
 
+const team = new Swiper('.team__slider', {
+  loop: false,
+  speed: 800,
+  slidesPerView: 4,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.team .swiper-button-next',
+    prevEl: '.team .swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+     
+    },
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    992: {
+      slidesPerView: 4,
+      spaceBetween: 40
+    }
+  }
+});
+
+const cert = new Swiper('.cert__slider', {
+  loop: false,
+  speed: 800,
+  slidesPerView: 4,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.cert .swiper-button-next',
+    prevEl: '.cert .swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+     
+    },
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    
+  }
+});
+const reviews = new Swiper('.reviews__carousel', {
+  loop: false,
+  speed: 800,
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  //centeredSlides: true,
+  navigation: {
+    nextEl: '.reviews .swiper-button-next',
+    prevEl: '.reviews .swiper-button-prev',
+  },
+});
+const news = new Swiper('.news__carousel', {
+  loop: false,
+  speed: 800,
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  //centeredSlides: true,
+  navigation: {
+    nextEl: '.news .swiper-button-next',
+    prevEl: '.news .swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+     
+    },
+    400: {
+      slidesPerView: "auto",
+    },
+    
+    
+  }
+});
+
+const getPaddingContainer = () => {
+  const fullContainer = document.querySelectorAll('.js-pl');
+  const paddingContainer = document.querySelector('.container').getBoundingClientRect();
+  console.log(paddingContainer);
+  fullContainer.forEach(item => {
+    console.log(item);
+    item.style.paddingLeft = `${paddingContainer.left+15}px`;
+  });
+};
+getPaddingContainer();
+window.addEventListener('resize', getPaddingContainer, true);
+
+
+
 // const fancybox = new Fancybox();
 //document.getElementById("selected_filename").innerHTML = document.getElementById("r-photo").value;
 
 const addPhoto = document.getElementById('r-photo');
-
 addPhoto.addEventListener('change', (event) => {
   const result = document.querySelector('.filename');
   result.textContent = `${event.target.value}`;
 });
+
