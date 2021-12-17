@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ireviews = new Swiper('.ireviews__carousel', {
     loop: false,
     speed: 800,
+    
     navigation: {
       nextEl: '.ireviews .swiper-button-next',
       prevEl: '.ireviews .swiper-button-prev',
@@ -93,7 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const reviews = new Swiper('.reviews__carousel', {
     loop: false,
     speed: 800,
-    slidesPerView: "auto",
+    // slidesPerView: "auto",
+    slidesPerView: 3,
     spaceBetween: 30,
     navigation: {
       nextEl: '.reviews .swiper-button-next',
@@ -139,5 +141,25 @@ document.addEventListener("DOMContentLoaded", () => {
     result.textContent = `${event.target.value}`;
   });
   
+   // Add event listener
+   document.addEventListener("mousemove", parallax);
+   const elems = document.querySelectorAll(".parallax");
+
+   // Magic happens here
+   function parallax(e) {
+       let _w = window.innerWidth/2;
+       let _h = window.innerHeight/2;
+       let _mouseX = e.clientX;
+       let _mouseY = e.clientY;
+       let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+       let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+       let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+       let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+     console.log(x);
+     elems.forEach(item => {
+      item.style.backgroundPosition = x;
+     });
+     
+   }
 
 });
