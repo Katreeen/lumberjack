@@ -101,6 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: '.reviews .swiper-button-next',
       prevEl: '.reviews .swiper-button-prev',
     },
+    breakpoints: {
+     
+      320: {
+        slidesPerView: 1,
+      },
+      575: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+    }
   });
   const news = new Swiper('.news__carousel', {
     loop: false,
@@ -155,11 +167,35 @@ document.addEventListener("DOMContentLoaded", () => {
        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-     console.log(x);
+     //console.log(x);
      elems.forEach(item => {
       item.style.backgroundPosition = x;
      });
      
-   }
+  }
+  
+
+  // news filter
+  const filterMonth = document.querySelector('#news-month'),
+    filterYear = document.querySelector('#news-year'),
+    newsParent = document.querySelector('#news-accord'),
+    newsItems = newsParent.querySelectorAll('.news__item');
+  
+  function filterNews(month, year) {
+    newsItems.forEach(item => {
+      month = item.dataset.month;
+      year = item.dataset.year;
+      item.classList.remove('active');
+      if (month == filterMonth.value && year == filterYear.value) {
+        item.classList.add('active');
+      }
+    });
+  }
+  filterMonth.addEventListener('change', filterNews);
+  filterYear.addEventListener('change', filterNews);
+  filterNews(filterMonth.options[filterMonth.selectedIndex].value, filterYear.options[filterYear.selectedIndex].value);
+  
+
+
 
 });

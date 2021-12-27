@@ -409,7 +409,7 @@ button, .btn{text-decoration:none; cursor:pointer; text-align:center; -webkit-tr
 
 
 .news{}
-.news__carousel{width: calc(100% + (100vw - 100%) /2);}
+/* .news__carousel{width: calc(100% + (100vw - 100%) /2);}
 .news__carousel .swiper-slide{width: 370px;}
   .-news-row{height: 100%;}
     .news__item{text-decoration: none!important; display: flex;  flex-direction: column; margin-bottom: 40px; height: 390px;}
@@ -420,7 +420,27 @@ button, .btn{text-decoration:none; cursor:pointer; text-align:center; -webkit-tr
       .news__text{display: flex; flex-direction: column; justify-content: space-between; height: 100%;}
         .news__title{color: #000000; text-transform: uppercase; display: block; padding-top: 14px; line-height: 1.25;}
         .news__anons{color: #636363; display: block; padding-top: 18px;}
-    .news__item:hover .inews__title{color: #FD5D1F;}
+    .news__item:hover .inews__title{color: #FD5D1F;} */
+
+  .news__filter{display: flex; margin-bottom: 40px;}
+    .filter__item{margin-right: 20px;}
+    .filter__item:last-child{margin-right: 0;}
+      .filter-title{}
+      .news-select{}
+  .news__list{}
+    .news__item{border:none; border-bottom: 1px solid #C4C4C4;display: none;}
+    .news__item.active{display: block;}
+    .news__item:hover, .news__item:focus{box-shadow:none;}
+    .news__item .accordion-button:hover, .news__item .accordion-button:focus{box-shadow:none;}
+    .news__item .accordion-header{padding: 24px 0 0 0;}
+      .news-data{}
+      .accordion-button.news-title{text-transform: uppercase; color:#FD5D1F!important;  padding: 24px 0;}
+      .accordion-button.news-title.collapsed{color: #2F2C2B!important;}
+      .accordion-button:not(.collapsed){box-shadow:none;}
+
+      .news-select:hover, .news-select:focus{box-shadow:none;}
+
+
 
 .price{}
 .accordion-item{background-color: transparent;border-bottom: 1px solid rgba(99, 99, 99, 0.5); }
@@ -665,7 +685,10 @@ ul.ul li:last-child{padding-bottom: 0;}
   .map-info{margin-top: 0; margin-bottom: 30px;}
   .itop__slider{height: 702px;}
   .itop__slider .swiper-slide{height: 702px; background-size: cover !important;}
-  
+  .reviews-popup .-reviews-item-row{flex-direction: column;    height: auto;}
+  .reviews-popup .reviews__photo{width: 100%;}
+  .reviews__info, .reviews-popup .reviews__info{width: 100%;}
+  .reviews-popup .reviews__item{border-top-left-radius:5px}
   
   
 }
