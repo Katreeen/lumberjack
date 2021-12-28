@@ -176,26 +176,47 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   // news filter
-  const filterMonth = document.querySelector('#news-month'),
-    filterYear = document.querySelector('#news-year'),
-    newsParent = document.querySelector('#news-accord'),
-    newsItems = newsParent.querySelectorAll('.news__item');
-  
-  function filterNews(month, year) {
-    newsItems.forEach(item => {
-      month = item.dataset.month;
-      year = item.dataset.year;
-      item.classList.remove('active');
-      if (month == filterMonth.value && year == filterYear.value) {
-        item.classList.add('active');
-      }
-    });
+  if(document.querySelector('#news-month')){
+    const filterMonth = document.querySelector('#news-month'),
+      filterYear = document.querySelector('#news-year'),
+      newsParent = document.querySelector('#news-accord'),
+      newsItems = newsParent.querySelectorAll('.news__item');
+    
+    function filterNews(month, year) {
+      newsItems.forEach(item => {
+        month = item.dataset.month;
+        year = item.dataset.year;
+        item.classList.remove('active');
+        if (month == filterMonth.value && year == filterYear.value) {
+          item.classList.add('active');
+        }
+      });
+    }
+    filterMonth.addEventListener('change', filterNews);
+    filterYear.addEventListener('change', filterNews);
+    filterNews(filterMonth.options[filterMonth.selectedIndex].value, filterYear.options[filterYear.selectedIndex].value);
   }
-  filterMonth.addEventListener('change', filterNews);
-  filterYear.addEventListener('change', filterNews);
-  filterNews(filterMonth.options[filterMonth.selectedIndex].value, filterYear.options[filterYear.selectedIndex].value);
-  
 
+  // menu mobil
+  const menu = document.querySelector('#hmenu');
+  const trigger = menu.querySelectorAll('.sub-item.parent');
+  console.log(window.innerWidth);
+
+  if (window.innerWidth < 575) {
+    trigger.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.nextElementSibling.classList.contains('show')) {
+          e.target.nextElementSibling.classList.remove('show');
+        } else {
+          e.target.nextElementSibling.classList.add('show');
+        }
+        
+        console.log(item.target.nextElementSibling);
+      });
+    });
+  
+  }
 
 
 });
