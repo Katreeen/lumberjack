@@ -218,5 +218,32 @@ document.addEventListener("DOMContentLoaded", () => {
   
   }
 
+  // map
+  const regionsArray = [
+    "properties.iso3166 = 'RU-MOS'",
+];
+ymaps.ready(init);
+
+function init() {
+
+    let projectMap  = new ymaps.Map('map', {
+        center: [55.58422718162347,37.38553349999997],
+        zoom: 8,
+        type: 'yandex#map',
+        controls: ["fullscreenControl"]
+    });
+
+    for (let i = 0, l = regionsArray.length; i < l; i++) {
+      ymaps.geoQuery(ymaps.borders.load("RU", {
+          lang: "ru",
+          quality: 2
+      })).search(regionsArray[i]).setOptions({
+          fillColor: "rgba(195,6,7, 0.1)",
+          strokeColor: "#ED7F01"
+      }).addToMap(projectMap);
+  }
+}
+
+
 
 });
