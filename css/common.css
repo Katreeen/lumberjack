@@ -520,7 +520,7 @@ ul.ul li{padding-left: 30px; position: relative; padding-bottom: 22px; line-heig
 ul.ul li:before{content: ''; width: 10px; height: 10px; background: #FD5D1F; border-radius:50%; color:#fff;  position: absolute; top: 4px; left: 0; line-height: 27px;}
 ul.ul li:last-child{padding-bottom: 0;}
 
-.map{position: relative;}
+.map{position: relative;width: 100%; height: 521px;}
 #map{width: 100%; height: 521px;}
 .blur{top: 0; left: 0; position: absolute; z-index: 100; height: 100%; width: 100%; -webkit-mask: radial-gradient(circle, #0000 550px, rgba(0, 0, 0, 0.6) 160px); backdrop-filter: blur(20px); pointer-events: none;}
 
@@ -711,8 +711,8 @@ ul.ul li:last-child{padding-bottom: 0;}
   .gallery a{padding: 0 10px;}
   .gallery{margin-left: -10px; margin-right: -10px;}
   .map__wrap{position: static;}
-  .map{display: flex; flex-direction: column;}
-  .map iframe{height: 400px; order: 7;}
+  .map{display: flex; flex-direction: column;height: 100%; }
+  #map{height: 400px; order: 7;}
   .map-info{margin-top: 0; margin-bottom: 30px;}
   .itop__slider{height: 702px;}
   .itop__slider .swiper-slide{height: 702px; background-size: cover !important;}
