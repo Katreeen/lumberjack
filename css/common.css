@@ -248,11 +248,16 @@ button, .btn{text-decoration:none; cursor:pointer; text-align:center; -webkit-tr
 
           
 
-.iwhy{background: url(../i/why-bg.png)#F7F7F7 no-repeat; height: 312px;}
+.iwhy{background: url(../i/why-bg.png)#F7F7F7 repeat 0 0; height: 312px; animation: bgScroll 40s linear infinite;}
   .-iwhy-row{padding-top: 10px;}
   .iwhy__num{line-height: 1;}
     .iwhy__text{margin: 10px auto 0; color: #2F2C2B;}
 
+    @keyframes bgScroll  {
+      100% {
+        background-position : 1920px 0
+      }
+  }
 .why{}
   .-why-row{}
   .why__num{line-height: 1;}
@@ -317,7 +322,7 @@ button, .btn{text-decoration:none; cursor:pointer; text-align:center; -webkit-tr
         .inews__anons{color: #636363; display: block; padding-top: 18px;}
     .inews__item:hover .inews__title{color: #FD5D1F;}
          
-.ifeedback{background: url(../i/feedback-bg.png) no-repeat;}
+.ifeedback{background: url(../i/feedback-bg.png) repeat 0 0; animation: bgScroll 40s linear infinite;}
   .ifeedback__form{}  
     .-ifeedback-row{}
       .form-label{color: #636363;}
