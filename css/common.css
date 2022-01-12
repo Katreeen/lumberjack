@@ -111,8 +111,8 @@ button, .btn{text-decoration:none; cursor:pointer; text-align:center; -webkit-tr
 /* header */
 .header{background: rgba(47, 44, 43, 0.9); height: 100px; position: relative; padding-top: 25px; padding-bottom: 25px;} 
   .-header-row{align-items: center; justify-content: space-between; }
-    .-logotype-row{align-items: center; flex-wrap: nowrap;}
-      .logotype{color:#FD5D1F; text-transform: uppercase; line-height: 1.2; text-decoration: none; padding-right: 16px; display: block; width: 111px;}
+    .-logotype-row{align-items: center; flex-wrap: nowrap; position: relative; padding-left: 111px;}
+      .logotype{color:#FD5D1F; text-transform: uppercase; line-height: 1.2; text-decoration: none; padding-right: 16px; display: block; width: 111px; position: absolute; top: -24px; left: 0; z-index: 2;}
       .logotype-text{color: #FFFFFF; max-width: 291px; padding-left: 16px; border-left:1px solid #FFFFFF;line-height: 1.15;} 
     .header__phone{}
     .header__phone .icon{background: url(../i/ic-phone.svg) no-repeat; width: 7px; height: 17px; margin-right: 10px; display: inline-block; vertical-align: middle;}
@@ -653,6 +653,7 @@ ul.ul li:last-child{padding-bottom: 0;}
   .accordion-button{padding: 40px 0; text-align: left;}
   .iservice__item{ margin: 11px -10px 11px -10px; position: relative; overflow: inherit;}
   .iservice__item:after{content: ''; background: #B0B0B0; width: auto; position: absolute; bottom: -11px; left: -10px; right: -10px; height: 1px; display: block;}
+  .header .logotype{border-right: 0}
   
 }
 
@@ -730,7 +731,7 @@ ul.ul li:last-child{padding-bottom: 0;}
   #hmenu .sub-menu .sub-menu{display: none!important; padding: 5px 14px 10px;}
   #hmenu .sub-menu .sub-menu.show{display: block!important;}
   #hmenu .nav-link + .sub-menu > li:hover .sub-menu{display: none;}
-
+  
 
 
 
